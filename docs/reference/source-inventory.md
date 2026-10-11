@@ -28,6 +28,19 @@ not imply that the implementation repository will be public.
 | Shutdown entrypoints | `U01_*full*.cmd`, `U01_preshutdown_guard.ps1` | Show early elevation and bounded shutdown |
 | Backup routing | `host-orchestrator/backup.py`, `backup.toml`, `docs/backup-routing.md` | Rewrite tiers, gates, and recovery gaps |
 
+## Firewall automation
+
+| Topic | Primary local sources | Publication use |
+| --- | --- | --- |
+| Router rule controller | `workspace/pm2/telegram-notify/src/fwController.ts` | Explain typed rule discovery, validation, and mutation |
+| RDP and media leases | `commandRuntime.ts`, `firewallLeaseStore.ts` | Explain source-IP restriction, expiry, persistence, and startup reconciliation |
+| Plex publication | `commandRuntime.ts` | Explain coordinated application and router state with rollback |
+| Router UPnP | `routerUpnp.ts`, `docs/router-upnp-administration.md` | Explain inventory, destructive disable, locking, and verification |
+| Edge login bans | `adminLoginBanStore.ts`, `nginxAdminBanSync.ts` | Explain persistent bans and transactional nginx activation |
+| Geographic edge policy | `nginx/tools/`, `nginx/EDGE-PARALLEL.md` | Explain immutable generated allowlist releases |
+| WSL LAN publication | `docker/p2p/Sync-P2PPortProxy.ps1`, `contract.json` | Explain contract-driven portproxy and LocalSubnet rules |
+| Host firewall posture | `U05_lan_adapter_restore.ps1`, `W85_windows_firewall_no_notifications.ps1` | Document the site-specific firewall-off policy and risk |
+
 ## Containers and networking
 
 | Topic | Primary local sources | Publication use |
@@ -67,6 +80,12 @@ not imply that the implementation repository will be public.
 - Shutdown work has a global deadline and continues independent safety stages
   after local failures.
 - Backup retention is gated on validating the new artifact.
+- Router rules are matched against an expected name, destination, port range,
+  and protocol before mutation rather than trusted by a stored numeric ID.
+- Temporary router exposure is persisted as lease state and reconciled after
+  process restart.
+- Edge deny-list updates are written atomically, tested against the complete
+  nginx configuration, and rolled back if validation or reload fails.
 - Retired components are documented to prevent accidental resurrection.
 
 ## Known documentation gaps
@@ -80,6 +99,14 @@ not imply that the implementation repository will be public.
   inspection only establishes declared intent.
 - Some historical migration documents contain useful reasoning but must not be
   presented as current runtime truth.
+- A failed RDP or media auto-close is alerted but is not retried or re-armed in
+  the running process; restart reconciliation or manual closure is then needed.
+- Media-admin publication opens the router rule before starting nginx. If nginx
+  startup fails, the current flow reports the partial failure but does not close
+  the rule or persist an expiry lease.
+- The host policy disables every Windows Firewall profile, so contract-generated
+  LocalSubnet allow rules exist but do not enforce isolation while that policy
+  remains active.
 
 ## Drift found during collection
 
