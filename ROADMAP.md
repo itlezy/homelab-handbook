@@ -30,5 +30,6 @@
 - Verify all commands in a disposable or non-destructive environment.
 - [x] Add a documentation license and security reporting policy.
 - Choose a renderer only if plain GitHub Markdown becomes limiting.
-- Create the GitHub repository and remote only as an explicit publishing step.
+- [x] Create the public GitHub repository and remote as an explicit publishing
+      step.
 
