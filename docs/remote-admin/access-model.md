@@ -20,6 +20,10 @@ There is no active general-purpose SSH administration path for the Windows
 hosts. Retired SCP scripts and router-focused SSH examples are historical or
 platform-specific material, not current host operations.
 
+The complete boundary between router leases, nginx policy, Windows-to-WSL
+publication, and the container firewall is documented in
+[Firewall and Exposure Automation](../automation/firewall-automation.md).
+
 ## Why WinRM is the LAN control path
 
 Operations that must be local to the secondary host use an authenticated

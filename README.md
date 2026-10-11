@@ -17,6 +17,7 @@ or a copy-paste map of the private network.
 ## Start here
 
 - [System overview](docs/architecture/system-overview.md)
+- [Firewall and exposure automation](docs/automation/firewall-automation.md)
 - [Handbook structure](docs/reference/handbook-structure.md)
 - [Collected source inventory](docs/reference/source-inventory.md)
 - [Publication safety](docs/security/publication-safety.md)

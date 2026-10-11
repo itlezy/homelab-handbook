@@ -21,6 +21,7 @@ Describe how work is coordinated:
 - elevation bridges and scheduled-task exceptions;
 - PM2 process supervision;
 - durable recurring jobs, leases, retries, and deferrals;
+- multi-plane firewall and exposure automation;
 - runtime flags and safe manual overrides.
 
 ## 3. Containers

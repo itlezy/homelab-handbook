@@ -12,6 +12,8 @@ packaging.
 The current stack contains a VPN gateway, several P2P clients, management UIs,
 a crawler and database, an automation service, and a port-forward supervisor.
 The exact application and port list belongs in a private service inventory.
+See [Firewall and Exposure Automation](../automation/firewall-automation.md)
+for the boundary between Gluetun, Windows portproxy, and router publication.
 
 Plex, nginx, and several media applications remain Windows-native. A prior
 assessment considered moving them, but the current decision is to defer that
