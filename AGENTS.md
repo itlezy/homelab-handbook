@@ -13,6 +13,7 @@
 - Keep source provenance in `docs/reference/source-inventory.md`; do not copy
   secrets or machine-generated state into this repository.
 - Make granular commits for logical documentation changes.
-- Keep the repository local-only until the operator explicitly requests remote
-  creation or publication.
+- Do not publish implementation repositories or private operational inventory
+  with this handbook. Adding or changing Git remotes requires an explicit
+  operator request.
 

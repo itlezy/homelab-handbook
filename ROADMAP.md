@@ -26,9 +26,9 @@
 
 ## Phase 4: publishing
 
-- Perform a repository-wide secret and personal-data review.
+- [x] Perform a repository-wide secret and personal-data review.
 - Verify all commands in a disposable or non-destructive environment.
-- Add a license and contribution policy.
+- [x] Add a documentation license and security reporting policy.
 - Choose a renderer only if plain GitHub Markdown becomes limiting.
 - Create the GitHub repository and remote only as an explicit publishing step.
 

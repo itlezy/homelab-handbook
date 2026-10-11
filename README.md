@@ -21,6 +21,8 @@ or a copy-paste map of the private network.
 - [Handbook structure](docs/reference/handbook-structure.md)
 - [Collected source inventory](docs/reference/source-inventory.md)
 - [Publication safety](docs/security/publication-safety.md)
+- [Security policy](SECURITY.md)
+- [License](LICENSE.md)
 - [Roadmap](ROADMAP.md)
 
 ## Proposed reading paths
@@ -51,7 +53,8 @@ Secrets are represented by environment-variable names or placeholders only.
 
 ## Repository status
 
-The first-pass inventory was assembled from the local automation repository on
-2026-10-11. It reflects source and documentation inspection, not a live health
-check of every service.
+This is the lean `v0.1` public edition. The first-pass inventory was assembled
+from a private local automation repository on 2026-10-11. It reflects source
+and documentation inspection, not a live health check of every service. The
+implementation repository and exact operational inventory remain private.
 
