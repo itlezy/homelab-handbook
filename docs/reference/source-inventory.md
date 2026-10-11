@@ -81,6 +81,21 @@ not imply that the implementation repository will be public.
 - Some historical migration documents contain useful reasoning but must not be
   presented as current runtime truth.
 
+## Drift found during collection
+
+- Older machine-flow text understates the number of current container services
+  and published LAN endpoints.
+- One current container management UI is absent from the older service-port
+  table.
+- Older service notes disagree with Compose about a metadata integration and
+  the protocol used for one crawler mapping.
+- The media-stack assessment begins with a newer decision to defer migration,
+  while older sections still recommend migrating components. Preserve it as a
+  dated analysis, not a single current recommendation.
+- Historical and sibling-project Compose files contain development defaults
+  that are weaker than the production stack. They are comparison material, not
+  deployment templates.
+
 ## Excluded source categories
 
 The scan deliberately did not ingest values from environment backups,
